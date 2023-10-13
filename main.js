@@ -11,41 +11,41 @@ document.body.appendChild( renderer.domElement );
 
 camera.position.z = 5;
 
-const loader = new GLTFLoader();
+// const loader = new GLTFLoader();
 
-const pointLight = new THREE.PointLight(0xffffff, 20); // Color: white, Intensity: 1
-pointLight.position.set(2, 2, 2); // Position of the light source
-scene.add(pointLight);
+// const pointLight = new THREE.PointLight(0xffffff, 20); // Color: white, Intensity: 1
+// pointLight.position.set(2, 2, 2); // Position of the light source
+// scene.add(pointLight);
 
 
 
-loader.load(
-	// resource URL
-	'./frogoblin.glb',
-	// called when the resource is loaded
-	function ( gltf ) {
+// loader.load(
+// 	// resource URL
+// 	'./frogoblin.glb',
+// 	// called when the resource is loaded
+// 	function ( gltf ) {
 
-		scene.add( gltf.scene );
-		gltf.animations; // Array<THREE.AnimationClip>
-		gltf.scene; // THREE.Group
-		gltf.scenes; // Array<THREE.Group>
-		gltf.cameras; // Array<THREE.Camera>
-		gltf.asset; // Object
+// 		scene.add( gltf.scene );
+// 		gltf.animations; // Array<THREE.AnimationClip>
+// 		gltf.scene; // THREE.Group
+// 		gltf.scenes; // Array<THREE.Group>
+// 		gltf.cameras; // Array<THREE.Camera>
+// 		gltf.asset; // Object
 
-	},
-	// called while loading is progressing
-	function ( xhr ) {
+// 	},
+// 	// called while loading is progressing
+// 	function ( xhr ) {
 
-		console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
+// 		console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
 
-	},
-	// called when loading has errors
-	function ( error ) {
+// 	},
+// 	// called when loading has errors
+// 	function ( error ) {
 
-		console.log( 'An error happened' );
+// 		console.log( 'An error happened' );
 
-	}
-);
+// 	}
+// );
 
 
 function animate() {
