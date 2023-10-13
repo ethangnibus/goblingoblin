@@ -17,11 +17,36 @@ camera.position.z = 5;
 
 const loader = new GLTFLoader();
 
-loader.load( './frogoblin.glb', function ( gltf ) {
-	scene.add( gltf.scene );
-}, undefined, function ( error ) {
-	console.error( error );
-} );
+
+
+loader.load(
+	// resource URL
+	'./frogoblin.glb',
+	// called when the resource is loaded
+	function ( gltf ) {
+
+		scene.add( gltf.scene );
+
+		gltf.animations; // Array<THREE.AnimationClip>
+		gltf.scene; // THREE.Group
+		gltf.scenes; // Array<THREE.Group>
+		gltf.cameras; // Array<THREE.Camera>
+		gltf.asset; // Object
+
+	},
+	// called while loading is progressing
+	function ( xhr ) {
+
+		console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
+
+	},
+	// called when loading has errors
+	function ( error ) {
+
+		console.log( 'An error happened' );
+
+	}
+);
 
 
 function animate() {
