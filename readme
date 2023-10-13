@@ -1,1 +1,3 @@
 npx vite build
+
+npx serve .
